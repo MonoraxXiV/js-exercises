@@ -13,8 +13,10 @@
 
     document.getElementById("run").addEventListener("click", function() {
 
-        // your code here
-
+        for (var input = 1; input <= 21; input++) {
+            var result=(input*input)
+            document.write("The square number for "+input+"is "+result);
+        }
     });
 
 })();
