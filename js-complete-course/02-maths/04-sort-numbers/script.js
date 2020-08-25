@@ -14,8 +14,10 @@
     // to get the value of an input: document.getElementById("element-id").value
 
     document.getElementById("run").addEventListener("click", function() {
+    const numbers = [parseInt(document.getElementById("run").value)];
 
-        // your code here
+        numbers.sort(function(a, b){return a-b});
+        alert(numbers);
 
     });
 
