@@ -11,6 +11,21 @@
 
 (function() {
 
-    // your code here
+    var i=1;
+    while (i>=1 === 0 && i<=100 === 0 , i++){
+        if (i%3 && i%5) {
+            console.log("Fizzbuzz")
+        }
+        else if (i%3) {
+            console.log("buzz")
+        }
+        else if (i%5) {
+            console.log("Fizz")
+        }
+        else{
+            console.log (i)
+        }
+
+    }
 
 })();
