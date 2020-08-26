@@ -13,6 +13,19 @@
 
     // to change the content of a tag: document.getElementById("element-id").innerHTML = "new-value"
 
-    // your code here
+    var d = new Date();
+    var todayYear = d.getFullYear();
+    var todayMonth = d.getMonth();
+    var todayDate = d.getDate();
+    var todayHour= d.getHours();
+    var todayMin= d.getMinutes();
+
+    const event = new Date(d);
+
+    console.log(event.toString());
+
+
+    document.getElementById("target").innerHTML = (event.toDateString()+", "+ todayHour+"h"+todayMin);
+
 
 })();
