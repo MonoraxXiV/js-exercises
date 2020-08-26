@@ -11,6 +11,11 @@
 
 (function() {
 
-    // your code here
-
+    var input = document.getElementById('color');
+    var button = document.querySelector('button');
+    button.addEventListener('click', function( event ) {
+        event.preventDefault();
+        var color = input.value;
+        document.body.style.background = color;
+    });
 })();
