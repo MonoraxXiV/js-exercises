@@ -10,7 +10,10 @@
 // You will have time to focus on it later.
 
 (function() {
-
+    //loop for the month to change?
+// function will have to check all 13th days of the month to check if that day was a friday
+    // to find the friday you'd have to use getday(4)
+    // if date=13 && day=4?
     // your code here
 
 })();
