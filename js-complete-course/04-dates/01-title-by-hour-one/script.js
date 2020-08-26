@@ -13,6 +13,13 @@
 
     // to change the content of a tag: document.getElementById("element-id").innerHTML = "new-value"
 
-    // your code here
+   var d= new Date;
+   d.getHours()
+   if (d>18){
+       document.getElementById("target").innerHTML = "Hello";
+   }
+    else{
+        document.getElementById("target").innerHTML = "good evening";
+    }
 
 })();
