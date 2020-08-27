@@ -12,8 +12,16 @@
 (function () {
     document.getElementById("run").addEventListener("click", function () {
         let random = Array.from({length: 10}, () => Math.floor(Math.random() * 100));
-        document.getElementById("n-1").innerHTML = (random);
+
+        var table= document.querySelectorAll("td");
+        console.log(table);
+       for (i=0; i < table.length; i++){
+           table[i].innerText=random[i];
+       }
         console.log(random);
+
+
+
         //smallest number
         const minRan = Math.min(...random)
 
@@ -22,6 +30,7 @@
         const maxRan = Math.max(...random);
         document.getElementById("max").innerHTML = (maxRan);
 
+        //sum start
         var sumRan = random.reduce(function (a, b) {
 
             return a + b;
