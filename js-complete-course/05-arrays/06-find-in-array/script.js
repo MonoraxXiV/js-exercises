@@ -88,7 +88,14 @@
             email: "gkeatche@google.fr",
         },
     ];
+//needed shown in console e-mail adress; show in text, index of Jean.
+    document.getElementById("run").addEventListener("click", function () {
 
-    // your code here
+       let Jean= people.find(person=> person.lastname=="Dupont" && person.firstname=="Jean");
+            console.log(Jean.email);
+            console.log(people.findIndex(person=>person===Jean));
+
+        });
+
 
 })();
