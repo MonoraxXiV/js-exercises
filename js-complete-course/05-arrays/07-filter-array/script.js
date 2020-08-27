@@ -9,7 +9,7 @@
 // NOTE: don't focus on the existing code structure for now.
 // You will have time to focus on it later.
 
-(function() {
+(function () {
 
     var people = [
         {
@@ -89,6 +89,13 @@
         },
     ];
 
-    // your code here
-
+    document.getElementById("run").addEventListener("click", function () {
+        let Adults = [];
+        for (let i = 0; i < people.length; i++) {
+            if (people[i].age > 18) {
+                Adults.push(people[i]);
+            }
+        }
+        console.log(Adults);
+    })
 })();
