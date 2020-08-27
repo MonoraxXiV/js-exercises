@@ -16,4 +16,18 @@
     // if date=13 && day=4?
     // your code here
 
+
+    var year= document.getElementById("year").value;
+
+
+        for (i = 0;i< 12; i++) {
+            var d= new Date(year, i, 13);
+            if (d.getDay() === 5)
+
+            {
+                console.log(d.getMonth())
+                alert (d.toLocaleString('default', {month: 'long'}));
+            }
+        }
+
 })();
