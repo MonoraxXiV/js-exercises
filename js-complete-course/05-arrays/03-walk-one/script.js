@@ -25,7 +25,12 @@
         "grap",
         "cherry",
     ];
+    document.getElementById("run").addEventListener("click", function() {
+        var iteration= fruits.length;
+        for ( i=0; i<iteration; i++) {
+            console.log (fruits[i]);
 
-    // your code here
+        }
+    })
 
 })();
