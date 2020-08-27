@@ -27,7 +27,33 @@
         "raisin",
         "cerise",
     ];
+    document.getElementById("run").addEventListener("click", function () {
+        function getUnique(array){
 
-    // your code here
+            var difFruit = [];
 
+
+
+            // Loop through array values
+
+            for(i=0; i < array.length; i++){
+
+                if(difFruit.indexOf(array[i]) === -1) {
+
+                    difFruit.push(array[i]);
+
+                }
+
+            }
+
+            return difFruit;
+
+        }
+
+        var difFruit = getUnique(fruits);
+
+        console.log(difFruit);
+
+
+    })
 })();
