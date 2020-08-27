@@ -9,7 +9,7 @@
 // NOTE: don't focus on the existing code structure for now.
 // You will have time to focus on it later.
 
-(function() {
+(function () {
 
     var people = [
         {
@@ -88,7 +88,18 @@
             age: 81,
         },
     ];
+    document.getElementById("run").addEventListener("click", function () {
 
-    // your code here
+     var ages= people.filter(person=> person.age);
+     console.log(ages);
+
+
+     var AgeTotal = people.reduce(function (a, b) {
+
+            return a + b;
+
+        }, 0);
+        console.log(AgeTotal)
+    })
 
 })();
