@@ -9,8 +9,30 @@
 // NOTE: don't focus on the existing code structure for now.
 // You will have time to focus on it later.
 
-(function() {
+(function () {
+    document.getElementById("run").addEventListener("click", function () {
+        let random = Array.from({length: 10}, () => Math.floor(Math.random() * 100));
+        document.getElementById("n-1").innerHTML = (random);
+        console.log(random);
+        //smallest number
+        const minRan = Math.min(...random)
 
-    // your code here
+        document.getElementById("min").innerHTML = (minRan);
+        // Biggest number
+        const maxRan = Math.max(...random);
+        document.getElementById("max").innerHTML = (maxRan);
+
+        var sumRan = random.reduce(function (a, b) {
+
+            return a + b;
+
+        }, 0);
+        document.getElementById("sum").innerHTML = (sumRan);
+
+        //Average starts here
+        var avRan=sumRan/random.length
+        document.getElementById("average").innerHTML = (avRan);
+    })
+
 
 })();
