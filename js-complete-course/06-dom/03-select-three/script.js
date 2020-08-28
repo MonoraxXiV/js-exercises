@@ -9,8 +9,13 @@
 // NOTE: don't focus on the existing code structure for now.
 // You will have time to focus on it later.
 
-(function() {
-
-    // your code here
+(function () {
+    let loop;
+    loop = document.querySelectorAll(".target");
+    for (i = 0; i < loop.length; i++) {
+        loop[i].innerText = "owned";
+        //basically like in exercise 05.09 we use a loop to change every slot.
+        // except we don't change it with an array, we change it with a string
+    }
 
 })();
