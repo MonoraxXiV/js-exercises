@@ -90,13 +90,10 @@
     ];
     document.getElementById("run").addEventListener("click", function () {
 
-     var ages= people.filter(person=> person.age);
-     console.log(ages);
 
+     var AgeTotal = people.reduce(function (a, b){
 
-     var AgeTotal = people.reduce(function (a, b) {
-
-            return a + b;
+            return a + b.age;
 
         }, 0);
         console.log(AgeTotal)
