@@ -19,6 +19,22 @@
         "../../_shared/img/map.svg",
     ];
 
-    // your code here
+    let firstImage = document.getElementsByTagName("img");
+    var i=0;
+
+
+        function nextPic() { //scrolls through the index of the gallery array.
+            i += 1;
+            if (i > gallery.length - 1) {
+                i = 0;
+            }
+            firstImage.src = gallery[i];
+            return gallery[i];
+            //make sure to return this, otherwise the source for the next picture gets confused.
+        }
+
+    document.getElementById("next").addEventListener("click", function (){
+        firstImage[0].setAttribute("src", nextPic()); //assigns the index number.
+    });
 
 })();
