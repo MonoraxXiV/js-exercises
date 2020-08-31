@@ -10,7 +10,19 @@
 // You will have time to focus on it later.
 
 (function() {
+   let Image=document.getElementsByTagName("img");
+    //get tag makes it into an array so we use [0] to choose an image.
+    let sourceImage= Image[0].src;
+    let hoverImage = document.getElementsByTagName("img")[0].getAttribute("data-hover");
+   console.log(sourceImage);
 
-    // your code here
+    Image[0].addEventListener("mouseover", function(  ) {
+        Image[0].setAttribute("src",hoverImage)
+
+    })
+    Image[0].addEventListener("mouseout", function(  ) {
+        Image[0].setAttribute("src",sourceImage);
+
+    })
 
 })();
