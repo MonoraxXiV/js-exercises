@@ -10,7 +10,14 @@
 // You will have time to focus on it later.
 
 (function() {
+    /*Inside the element with id "target", create an HTML table with 1 column and 10 rows.
 
-    // your code here
+     */
 
+    var table = document.createElement('table');
+    var row = table.insertRow(0);
+    for(j=1; j<=10; j++){
+        var cell = row.insertCell(j-1);
+    }
+    document.getElementById("target").appendChild(table);
 })();
