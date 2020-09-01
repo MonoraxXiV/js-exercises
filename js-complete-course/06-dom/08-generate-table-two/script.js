@@ -17,9 +17,11 @@
 
 
     for ( r = 1; r <= 10; r++) {
-        var row = table.document.createElement("tr");
+        var row = document.createElement("tr");
         for (c = 1; c <= 10; c++){
             var column = document.createElement("td");
+            var i=1;
+            column.textContent=  r*c; //don't do +1, c++ is already doing that
             row.appendChild(column);}
         table.appendChild(row);
     }
