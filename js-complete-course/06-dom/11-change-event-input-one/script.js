@@ -8,9 +8,27 @@
 
 // NOTE: don't focus on the existing code structure for now.
 // You will have time to focus on it later.
-
+password = document.getElementById("pass-one");
 (function() {
 
-    // your code here
+
+
+    function passLength(input){
+
+        if(input.length > 10) {return false;}
+        else {return true;}
+
+    }
+
+    function counter(input){
+        let i = input.length;
+        document.getElementById("counter").innerHTML = i + "/10";
+    }
+    password.onkeyup = function() {
+
+        if (!passLength(this.value)) password.value = password.value.substr(0, 10);
+        counter(this.value);
+    }
+
 
 })();
