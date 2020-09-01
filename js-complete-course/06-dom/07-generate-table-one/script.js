@@ -15,9 +15,13 @@
      */
 
     var table = document.createElement('table');
-    var row = table.insertRow(0);
-    for(j=1; j<=10; j++){
-        var cell = row.insertCell(j-1);
+
+    for(i=1; i<=10; i++) {
+       var row= table.insertRow();
+        for (j = 1; j <= 1; j++) {
+            var cell = row.insertCell(j - 1);
+
+        }
     }
     document.getElementById("target").appendChild(table);
 })();
