@@ -10,16 +10,19 @@
 // You will have time to focus on it later.
 
 (function () {
- var text =document.getElementById("target").innerHTML=("In monochrome memories, our tears are painted in red");
+    var text = document.getElementById("target").innerHTML = ("In monochrome memories, our tears are painted in red");
+    var spanWords = document.createElement("SPAN");
+    // split the string into parts, these parts we will have to change
+    var res = text.split(" ");
+    console.log(res);
 
- // split the string into parts, these parts we will have to change
- var res = text.split(" ");
- console.log(res);
+    for (var i = 0; i < res.length; i++) {
 
- for (i=1; i<res.length; i++){
-  document.getElementById("res")[i].style.fontSize= "20px"+i;
- }
-
+        spanWords.innerHTML = res[i];
+        spanWords.style.fontSize = "25px";
+        console.log(spanWords);
+       document.getElementById("target").appendChild(spanWords);
+    }
 
 
 })();
