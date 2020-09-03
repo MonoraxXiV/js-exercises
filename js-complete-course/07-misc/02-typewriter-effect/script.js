@@ -9,8 +9,26 @@
 // NOTE: don't focus on the existing code structure for now.
 // You will have time to focus on it later.
 
-(function() {
+(function () {
+    var text = document.getElementById("target");
+    var typeWriter = Array.from(text.innerHTML);
+    text.innerHTML = "";
+    var interval = setInterval(Typing, 100);
+    var i = 0;
 
-    // your code here
+
+        function Typing() {
+            //while (j < typeWriter.length) {
+                var spanWriter = document.createElement("span");
+                spanWriter.innerText = typeWriter[i];
+
+                document.getElementById("target").appendChild(spanWriter);
+                i++
+
+                //while loop, breaking, setTimeOut, error handling
+            }
+        //}
+
+
 
 })();
