@@ -17,17 +17,20 @@
     var i = 0;
 
 
-        function Typing() {
-            //while (j < typeWriter.length) {
-                var spanWriter = document.createElement("span");
-                spanWriter.innerText = typeWriter[i];
+    function Typing() {
 
-                document.getElementById("target").appendChild(spanWriter);
-                i++
+        var spanWriter = document.createElement("span");
+        spanWriter.innerText = typeWriter[i];
+        document.getElementById("target").appendChild(spanWriter);
+        i++
+        if (i >= typeWriter.length){
+            clearInterval(interval)
+            //clears interval after the max length of typewriter has been reached.
+        }
 
-                //while loop, breaking, setTimeOut, error handling
-            }
-        //}
+        //while loop, breaking, setTimeOut, error handling
+    }
+
 
 
 
