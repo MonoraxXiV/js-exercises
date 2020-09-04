@@ -9,31 +9,42 @@
 // NOTE: don't focus on the existing code structure for now.
 // You will have time to focus on it later.
 
-(function() {
+(function () {
 
- // 1 page get loaded, random number between 0 and 100 is generated.
- // 2. prompts user for a number.
- // 3.compares guess with number -> responds higher or lower or that's it if correct.
- // 4. add counter for Y, where Y is the amount of guesses.
- //5. When number is guessed show how many guesses it took.
-    var isCorrect = new Boolean(true);
-    var randomNumber=Math.floor(Math.random() * 100) + 1; // returns a random integer from 1 to 100
-    console.log(randomNumber) //for now keep for debug reasons, remove later.
+    // 1 page get loaded, random number between 0 and 100 is generated.
+    // 2. prompts user for a number.
+    // 3.compares guess with number -> responds higher or lower or that's it if correct.
+    // 4. add counter for Y, where Y is the amount of guesses.
+    //5. When number is guessed show how many guesses it took.
 
-    var guess = prompt("Please enter a number");
-    while (isCorrect != true)
+    var guessCount = 0;
 
-    if (guess > randomNumber){
-        alert("lower");
-        return isCorrect=false
+    function guessGame() {
+        var randomNumber = Math.floor(Math.random() * 100) + 1; // returns a random integer from 1 to 100
+        console.log(randomNumber) //for now keep for debug reasons, remove later.
+        do {
+            var guess = prompt("Please enter a number");
 
+
+            if (guess > randomNumber) {
+                alert("lower");
+                guessCount++;
+
+
+            } else if (guess < randomNumber) {
+                alert("higher");
+                guessCount++;
+
+
+            } else if (guess == randomNumber) {
+                guessCount++
+                alert("that's it, you needed " + guessCount + " tries to find it.");
+            } else {
+                alert("this is not a valid number");
+
+            }
+        } while (guess != randomNumber);
     }
-    else if(guess < randomNumber){
-        alert("higher");
-        return isCorrect=false
-    }
-    else if (guess == randomNumber){
-        alert("that's it")
-        return isCorrect=true;
-    }
+
+    guessGame();
 })();
