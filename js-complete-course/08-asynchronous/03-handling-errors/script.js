@@ -10,5 +10,23 @@
 // You will have time to focus on it later.
 
 (() => {
-    // your code here
+    let run = document.getElementById("run");
+    //when button is clicked then it will get the posts.
+    run.addEventListener("click", getPersons);
+
+    function getPersons() {
+        //obtaining posts
+        window.lib.getPersons(function (error, response) {
+            if (error) {
+                console.error("error");
+            } else
+
+                response.forEach(response => {
+
+                    console.log(response)
+                })
+
+        })
+
+    }
 })();
