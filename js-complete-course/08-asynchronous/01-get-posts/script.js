@@ -29,14 +29,21 @@
     }
 */
     //you need the next value
-    document.getElementById("run").addEventListener("click", function() {
 
-        function gettingPost() {
+    let run = document.getElementById("run");
 
-            posts = window.lib.getPosts(error,response);
-            console.log (posts)
+    run.addEventListener("click", getPosts);
 
-        }
+    function getPosts() {
+        window.lib.getPosts(function (error, response) {
+            response.forEach(post =>
+            {
+
+            })
+            console.log(response)
+        })
+
+    }
 
 
         /*
@@ -51,7 +58,7 @@
         */
 
 
-    })
+
 
 
 
