@@ -19,43 +19,28 @@
     let nextpost= document.getElementById("utils.generatePost()");
 
     //callbacks can be found under _shared then callbacks.js.
-   /* function postError(){
-        if (error){
 
-        }
-        else{
-            console.log("no error, carry on")
-        }
-    }
-*/
     //you need the next value
-
+    //activating the button.
     let run = document.getElementById("run");
-
+    //when button is clicked then it will get the posts.
     run.addEventListener("click", getPosts);
 
     function getPosts() {
+        //obtaining posts
         window.lib.getPosts(function (error, response) {
-            response.forEach(post =>
+            //printing post in each array
+            response.forEach(response =>
             {
-
+                //prints the arrays
+                console.log(response)
             })
-            console.log(response)
+
         })
 
     }
 
 
-        /*
-        async function asyncCall() {
-            const postContent= fetch (gettingPost());
-            const result = await postContent;
-
-
-            console.log(posts);
-
-        }
-        */
 
 
 
