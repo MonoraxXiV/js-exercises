@@ -18,9 +18,11 @@
 
         function resolveHandler(resolve){
             console.log("success");
-            resolve.forEach(resolve => {
-                window.lib.getComments().then(rejectHandler,rejectHandler);
-                console.log(resolve);
+            resolve.forEach(post => {
+                //.then creates infinite loop, .finally loses resolve as a defined object
+                //original had post.id
+                window.lib.getComments().finally(post.id,resolveHandler,rejectHandler);
+                console.log(post);
             })
         }
 
