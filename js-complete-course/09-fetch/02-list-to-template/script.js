@@ -10,5 +10,22 @@
 // You will have time to focus on it later.
 
 (() => {
-    // your code here
+    // use fetch to obtain the data
+    // display it in the target id
+    // cloneNode, see https://blog.teamtreehouse.com/creating-reusable-markup-with-the-html-template-element under html templates.
+    let run = document.getElementById("run")
+
+    run.addEventListener("click", function () {
+        //fetch was correct
+        fetch('http://localhost:3000/heroes')
+            .then (resolve=> resolve.json())
+            .then(data=> document.getElementById("target").innerHTML =data)
+
+
+        function getTemplate (){
+             document.getElementById("tpl-hero");
+
+        }
+
+    })
 })();
