@@ -15,17 +15,26 @@
     let run = document.getElementById("run")
 
     run.addEventListener("click", function () {
-
+    let array;
         function resolveHandler(resolve){
             console.log("success");
             resolve.forEach(post => {
-                //.then creates infinite loop, .finally loses resolve as a defined object
+                //.then creates infinite loop, .finally loses resolve as a defined object ->proved false
                 //original had post.id
-                window.lib.getComments().finally(post.id,resolveHandler,rejectHandler);
-                console.log(post);
+                //infinite looping was being caused by calling resolveHandler, within resolveHandler
+                //solution: Make separate function to avoid this ^
+                window.lib.getComments(post.id).then(resolve2Handler,rejectHandler);
+                //made array to contain post then add comments to it.
+                array=post;
             })
         }
 
+        //made seperate function to avoid calling a function within said function.
+        function resolve2Handler(comments){
+            //here we add comments to array, displaying it.
+            array.comment=comments;
+            console.log(array);
+        }
         function rejectHandler(){
             console.error("error");
         }
