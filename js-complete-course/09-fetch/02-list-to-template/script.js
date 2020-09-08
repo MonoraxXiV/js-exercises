@@ -23,7 +23,9 @@
 
 
         function getTemplate (){
-             document.getElementById("tpl-hero");
+            var tmpl = document.getElementById('tpl-hero');
+            document.body.appendChild(tmpl.content.cloneNode(true));
+            console.log(tmpl);
 
         }
 
