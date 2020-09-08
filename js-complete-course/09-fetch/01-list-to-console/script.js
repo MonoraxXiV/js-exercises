@@ -15,13 +15,13 @@
    let run = document.getElementById("run")
 
    run.addEventListener("click", function () {
-      fetch('http://localhost:3000/heroes');
-      var xhttp = new XMLHttpRequest();
-      xhttp.open("GET", 'http://localhost:3000/heroes', true);
-      xhttp.send();
+      //fetch was correct
+      fetch('http://localhost:3000/heroes')
+          //fetch gives a promise, do not have ; behind that statement if you want to use a .then
+          .then (resolve=> resolve.json())
+          //gods knows where resolve.json is located, Kayalin does not.
+          .then(data=>console.log(data))
 
-      let response= xhttp.responseText;
-      console.log(response);
    })
 
 })();
