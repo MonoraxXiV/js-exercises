@@ -10,26 +10,33 @@
 // You will have time to focus on it later.
 
 (() => {
-    let run= document.getElementById("run")
 
-    run.addEventListener("click", function() {
+    let run = document.getElementById("run")
 
+    run.addEventListener("click", function () {
 
-
-        function resolveHandler(resolve){
-            console.log("success");
-            resolve.forEach(resolve => {
+        //await the steps in the other functions
+        async function resolveHandler(resolve) {
+           await resolve.forEach(resolve => {
                 console.log(resolve)
             })
         }
 
-        function rejectHandler(reject){
-            console.error("error");
+        async function rejectHandler(reject) {
+           await console.error("error");
         }
 
         //getPosts need parameters reject and resolve.
         //As the promise was already made in promises.js, so no new one was needed.
-        window.lib.getPosts().then(resolveHandler,rejectHandler);
+        //don't await the function that calls the other functions
+            window.lib.getPosts().then(resolveHandler, rejectHandler);
+
+
+
+
+
+
 
     })
+
 })();
