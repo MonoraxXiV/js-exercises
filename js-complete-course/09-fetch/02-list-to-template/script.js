@@ -21,23 +21,33 @@
         //fetch was correct
         fetch('http://localhost:3000/heroes')
             .then (resolve=> resolve.json())
-            .then(xmenAmount=> showAllData())
+            //pass data to the function as parameter
+            .then(data=> showAllData(data))
 
 
         //assuming a loop will be involved to put all the x-men into a template.
-        function showAllData(xmenAmount) {
+        //
+        function showAllData(heroes) {
             //currently using 5 instead of something.length
-            for (let i = 0; i < 5; i++) {
-                //looping for each of the xmen
-                let listOfXmen= xmenAmount[i];
-                //when using document we can call upon the queryselector to specify what we seek.
-                let xmen = document.getElementById('tpl-hero').content.cloneNode(true);
-                //selector apparently wants a dot, otherwise it complains
-                xmen.querySelector('.name').innerText=listOfXmen.name;
+            console.log(heroes);
+
+                heroes.forEach(xmen=> {
+
+                    //when using document we can call upon the queryselector to specify what we seek.
+                    let templateNode = document.getElementById('tpl-hero').content.cloneNode(true);
+                    //selector apparently wants a dot, otherwise it complains
+                    templateNode.querySelector('.name').innerText = xmen.name;
+                    //for some reason when I do the same for listOfXmen.AlterEgo it doesn't work
+                    templateNode.querySelector('.alter-ego').innerText = xmen.alterEgo;
+                    templateNode.querySelector(".powers").innerText=xmen.abilities;
+                    //won't be visible without appending it to target
+                    document.getElementById("target").appendChild(templateNode);
+                })
+
 
 
             }
-        }
+
 
     })
 })();
